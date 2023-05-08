@@ -1,0 +1,36 @@
+.video-container{
+    background-image: linear-gradient(rgba(163, 163, 203,0.5),rgba(7, 7, 11, 0.09)),url('../../assets//bg/video-shape.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85vw;
+    margin: auto;
+    margin-top: 2rem;
+    padding: 2rem 0rem 4rem 0rem;
+    position: relative;
+}
+.video-container>h6{
+    padding: 0rem 1rem 1.5rem 1rem;
+    color: #fff;
+    font-size: 2.5rem;
+}
+.responsive-iframe{
+    width: 85vw;
+    height: 95vh;
+}
+@media only screen and (max-width:600px){
+    .video-container{
+        width: 100vw;
+    }
+    .responsive-iframe{
+        width: 95vw;
+        height: 50vh;
+    }
+    .video-container>h6{
+        font-size: 1.8rem;
+    }
+}

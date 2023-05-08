@@ -1,0 +1,132 @@
+.sponsorhip-section{
+    padding: 5% 1%;
+    text-align: center;
+    background-image:linear-gradient(rgba(26, 10, 30,.8),rgba(26, 10, 30,.8)) ,url("../../assets/bg/price-4-bg.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+.sponsorhip-section>h1{
+    color:var(--t-red);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+.sponsorhip-section>h6{
+    color: #fff;
+    font-size: 3.3rem;
+    font-weight: 600;
+    margin-bottom: 5rem;
+}
+.sponsorship-card-parent{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap:3rem;
+}
+.spnsorship-card{
+    width:18rem;
+    padding: 1rem 1rem 2rem 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("../../assets/shape/price-shape.png");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 2%;
+    gap:3rem;
+}
+.sponsorship-h{
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sponsorship-h>h1{
+    margin-bottom: 1rem;
+    padding-top: 1rem;
+
+}
+.price>h2{
+    padding:.5rem 2rem;
+    color:rgba(0,0,0,0.4);
+    background-color: #fff;
+    border-radius: 2rem;
+    width: fit-content;
+    font-size: 3rem;
+    margin-bottom: .5rem;
+    display: flex;
+}
+.price>h2::before{
+    content: "$";
+    font-size: 1rem;
+    justify-content: flex-start;
+}
+.spnsorship-card>ul>li{
+color:#fff;
+list-style: none;
+margin-left: -3em;
+font-weight: 600;
+}
+.sponsorship-btn{
+    text-decoration: none;
+    color: #fff;
+    padding: .8rem 2rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+.sponsorship-btn::before{
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:20%;
+    height: 65%;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 0 100% 0 0;
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.sponsorship-btn:hover::before{
+    width:200%;
+    height: 200%;
+    border-radius: 0 100% 0 0;
+
+}
+.spnsorship-card-y{
+    background-color:#f9d464;
+}
+.spnsorship-card-r{
+    background-color: #fc097c;
+}
+.spnsorship-card-b{
+    background-color: #0db0ef;
+}
+.price-p>h2{
+    color:#9c790e ;
+}
+.price-s>h2{
+    color:#8e285a;
+}
+.price-g>h2{
+    color:#196d8e;
+}
+.sponso-btn-r{
+    background-color: #fc097c;
+}
+.sponso-btn-y{
+    background-color: #f9d464;
+}
+@media only screen and (max-width:700px) {
+    .spnsorship-card{
+        width:20rem;
+
+    }
+}
+@media only screen and (max-width:400px) {
+    .spnsorship-card{
+        width:16rem;
+
+    }
+}

@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+:root{
+  /* text colors */
+  --t-yell: #f9d464;
+  --t-white:#ffffff;
+  --t-red:#fc097c;
+  --t-blue:#0db0ef;
+  --t-black:#1a0a1e;
+  --t-lgrey:#666666;
+  --t-lpurple:#a3a3cb;
+  /* background colors */
+  --bg-blue:#00acee;
+  --bg-tblue:rgba(25, 180, 240, 0.9);
+  --bg-purple:#311a79;
+  --bg-lpurple:#554bc0;
+  --bg-yell:rgb(255 153 0);
+  --bg-red:#e21212d4;
+  --bg-white:#ffffff;
+}
+/* centered in row direction */
+.crflex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* centered in column direction */
+.ccflex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+/* Vertically aligned centered , horizontaly space between  */
+.sbrflex{
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+/* horizontalily aligned centered , verticaly space between */
+.sbcflex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Archivo', sans-serif;
+}
+h6{
+  font-family: 'Big Shoulders Display', cursive;
+}
+p{
+  font-family: 'Open Sans', sans-serif;
+}
+ul{
+  list-style-type: none;
+}

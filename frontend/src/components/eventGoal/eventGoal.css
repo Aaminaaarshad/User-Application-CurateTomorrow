@@ -1,0 +1,227 @@
+.eventGoal{
+    position: relative;
+    background-color: var(--bg-purple);
+    padding-bottom: 2%;
+    overflow: hidden;
+}
+.eventGoal>img{
+    position: absolute;
+}
+
+.eventGoal>img:nth-of-type(1){
+    position: absolute;
+    left: -50px;
+    top: 5px;
+    -webkit-animation: round-01 5s linear infinite;
+    animation: round-01 5s linear infinite;
+}
+@keyframes round-01 {
+    0% {
+    transform: rotate(15deg);
+}
+
+50% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(15deg);
+}
+}
+.eventGoal>img:nth-of-type(2){
+    top: 0;
+    right: 130px;
+    -webkit-animation: rotate-style 10s linear infinite;
+    animation: rotate-style 10s linear infinite;
+}
+.eventGoal>img:nth-of-type(3){
+    top: 60px;
+    right: -50px;
+    -webkit-animation: round-01 5s linear infinite;
+    animation: round-01 5s linear infinite;
+}
+
+
+@keyframes rotate-style {
+    0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+.eventGoal-container{
+    padding-top: 7rem;
+}
+.eventGoal-container-l{
+    position: relative;
+    width: 50%;
+    margin-top: -30%;
+}
+.goalcounter{
+    width: 13.4rem;
+    height: 13.4rem;
+    border-radius: 50%;
+    padding: 3.7rem 1.9rem;
+    text-align: center;
+    position: absolute;
+}
+.countSpeaker{
+    background-color: var(--bg-yell);
+}
+.countattende{
+    background-color: var(--bg-red);
+    top: -50px;
+    left: 190px;
+}
+.countworkshop{
+    background-color: var(--bg-tblue);
+    top: 135px;
+    left: 135px;
+}
+.goalcounter>h4{
+    color: var(--t-white);
+    font-size: 3.6rem;
+}
+.goalcounter>p{
+    color: var(--t-white);
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+
+
+.eventGoal-container-r{
+    width: 50%;
+}
+
+.eventGoal-container-r>div>h6{
+    color: var(--t-lpurple);
+}
+.eventGoal-container-r>div>p{
+    color: var(--t-white);
+}
+.eventGoal-detail{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    gap:5rem;
+    margin-top: 3rem;
+}
+.eventGoal-detail>div>h4{
+    color: var(--t-red);
+    font-size: 1.5rem;
+    line-height: 2.34rem;
+}
+.eventGoal-detail>div>p{
+    color: var(--t-white);
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    line-height: 2.34rem;
+}
+@media only screen and (max-width:1000px) {
+    .eventGoal-container{
+        padding-top: 10%;
+    }
+    .eventGoal-container-l{
+        position: relative;
+        margin-top:7%;
+        margin-bottom: 2rem;
+        height:max-content;
+        padding: 0;
+    }
+    .eventGoal-container-r{
+        width: 100%;
+        padding: 0;
+        margin-top: 15rem;
+        /* margin-bottom: 15rem; */
+    }
+}
+@media only screen and (max-width:600px) {
+    .eventGoal-container{
+        padding-top: 30%;
+    }
+    .eventGoal-container-l{
+        position: relative;
+        margin-top:5%;
+        height:max-content;
+        padding: 0;
+        margin-left: -20%;
+        margin-bottom: 10%;
+    }
+    .eventGoal-container-r{
+        width: 100%;
+        padding: 0;
+        margin-top: 15rem;
+        /* margin-bottom: 15rem; */
+    }
+    .goalcounter{
+        width: 10.4rem;
+        height: 10.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-radius: 50%;
+        padding: 3.7rem 1.9rem;
+        text-align: center;
+        position: absolute;
+    }
+
+    .countattende{
+        top: -50px;
+        left: 143px;
+    }
+    .countworkshop{
+        top: 80px;
+        left: 119px;
+    }
+    .eventGoal-detail{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        gap:1rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
+@media only screen and (max-width:400px) {
+    .eventGoal-container{
+        padding-top: 35%;
+    }
+    .eventGoal-container-l{
+        margin-left: -30%;
+        margin-bottom: 0%;
+    }
+    .eventGoal-container-r{
+        width: 100%;
+        padding: 0;
+        margin-top: 15rem;
+    }
+    .goalcounter{
+        width: 8.4rem;
+        height: 8.4rem;
+    }
+    .goalcounter>h4{
+        font-size: 2.6rem;
+    }
+    .countattende{
+        top: -50px;
+        left: 111px;
+    }
+    .countworkshop{
+        top: 65px;
+        left: 105px;
+    }
+    .eventGoal-detail{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        gap:1rem;
+        margin-top: 3rem;
+        text-align: center;
+    }
+}
+

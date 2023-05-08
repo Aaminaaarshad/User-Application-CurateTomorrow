@@ -1,0 +1,230 @@
+.RigisterFormParent{
+    color: #666666;
+}
+.RigisterFormParent label{
+line-height: 1;
+font-weight: 400;
+text-transform: capitalize;
+}
+
+.RigisterFormParent p{
+    line-height: 1;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+
+.RigisterFormParent input{
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    background-color: #fff;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+    }
+
+    .RigisterFormParent textarea{
+        padding: 1rem;
+        border: 1px solid #ced4da;
+        background-color: #fff;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
+        }
+    
+.header-register{
+    background-color: black;
+    background: rgba(5, 65, 218, 0.7);;
+    background-image: url("../../assets/bg/footer-bg-3.jpg"); /* fallback */
+    background: linear-gradient(rgba(5, 65, 218, 0.7), rgba(5, 65, 218, 0.7)),url('../../assets/bg/footer-bg-3-copy.jpg');
+    display: flex;
+    flex-direction: column;
+    gap:5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem 3rem 7rem;
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    position: relative;
+}
+.header-register>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+.header-register>div>img{
+    box-sizing: border-box;
+    z-index: 2;
+    width: 13rem;
+}
+.header-register>h1{
+    font-size: 3rem ;
+    color:#fff;
+    z-index: 3;
+    font-weight: 700;
+}
+
+
+.formParent{
+display: flex;
+justify-content: center;
+width: 100%;
+margin:6rem 0rem;
+
+
+}
+
+.registrationForm{
+    width: 75%;
+    border: 1px solid #ced4da;
+
+    border-radius: 10px;
+    padding: 3rem;
+    box-sizing: border-box;
+}
+
+.formInputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    
+}
+
+.formInputs>div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 48%;
+    margin-bottom: 1.5rem;
+}
+
+.formInputs>div>input{
+   height: 2.5rem;
+   width: 100%;
+   border-radius: 3px;
+
+
+}
+
+.formOptions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.radioDiv{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.radioDiv>div{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.radioDiv>div>div{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.reason{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.reason div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+.reason>div>textarea{
+    width: 100%;
+    resize: none;
+}
+
+
+.imageInput{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.imageInput>div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.imageInput>div>label>img{
+    width: 2.5rem;
+   cursor: pointer;
+   transition: all 250ms linear;
+   
+}
+.imageInput>div>label>img:hover{
+    transform: scale(1.1);
+   
+}
+
+.imageInput>input{
+   /* display: none; */
+   
+}
+
+
+.socialBox{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+.social{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.social label{
+    display: flex;
+    justify-content: center;align-items: center;
+    gap: 0.5rem;
+}
+
+.submitBtn{
+    border: 1px solid var(--t-white);
+    line-height: 0rem;
+    padding: 1.5rem 2rem;
+    color: var(--t-white);
+    background-color: var(--t-red);
+    font-size: 1rem;
+    font-weight:700;
+    font-family: 'Archivo', sans-serif;
+    text-decoration: none;
+
+}
+
+.submitBtn:hover{
+    line-height: 0rem;
+    padding: 1.5rem 2rem;
+    border: 1px solid var(--t-red);
+    background-color: var(--t-white);
+    color: var(--t-red);
+
+
+
+}

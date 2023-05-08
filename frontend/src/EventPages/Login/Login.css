@@ -1,0 +1,102 @@
+.form{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+.loginLeft{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 2rem;
+  background-color: #394fb7;
+  color: #fff;
+  width: 60%;
+}
+.loginLeft>h1{
+  font-size: 90px;
+  text-align: center;
+  line-height: 1.1em;
+  letter-spacing: normal;
+}
+.loginRight{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #e6e6e6;
+  width: 40%;
+}
+/* .form>h3{
+  margin-bottom: 10px;
+} */
+.loginRight>h3{
+  margin-bottom: 10px;
+  width: 80%;
+  /* padding: 0rem 5rem; */
+}
+.loginRight>form{
+  width: 80%;
+}
+.form-group input {
+  border: 1px solid #394fb7;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  background-color: transparent;
+}
+.form-group>input{
+  border: 1px solid #394fb7;
+}
+
+.form-group {
+  text-align: left;
+  display: block;
+  /* margin: 0 0 5px 3px; */
+}
+.loginRight>p{
+  margin-top: 5rem;
+  letter-spacing: 0.01rem;
+}
+.loginRight>p>a{
+  color: #394fb7;
+  letter-spacing: 0rem;
+
+}
+
+.btn {
+  padding: 10px 20px;
+  border: 1px solid #394fb7;
+  border-radius: 5px;
+  background-color: #394fb7;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn svg {
+  margin-right: 8px;
+}
+
+.btn-reverse {
+  background: #fff;
+  color: #000;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}

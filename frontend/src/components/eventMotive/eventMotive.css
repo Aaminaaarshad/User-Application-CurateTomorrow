@@ -1,0 +1,25 @@
+.eventmotive{
+    padding-top: 3rem;
+}
+#ceoimg{
+    width: 100%;
+    height: 100%;
+}
+@media only screen and (max-width:1000px) {
+    #ceoimg{
+        width: 80%;
+        height: 80%;
+    }
+}
+@media only screen and (max-width:600px) {
+    #ceoimg{
+        width: 80%;
+        height: 80%;
+    }
+}
+@media only screen and (max-width:600px) {
+    #ceoimg{
+        width: 90%;
+        height: 90%;
+    }
+}
