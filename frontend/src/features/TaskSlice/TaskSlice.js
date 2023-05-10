@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from "axios";
-import { useSelector, useDispatch } from 'react-redux'
 
 const initialState = {
     info: [],
@@ -10,19 +9,25 @@ const initialState = {
     message: ""
 }
 
+
+
 export const createForm =createAsyncThunk('taskSlice/createForm',async(formData, thunkAPI)=>{
+    console.log('helo');
     console.log(formData)
     try {
-        
         const response = await axios.post("http://localhost:5000/api/application/createForm",formData)
         return response.data
     
+       
+
     } catch (error) {
         const message = (error.response && error.response.data && error.response.data.message) || error.message || error.toString()
         return thunkAPI.rejectWithValue(message)
     }
 
 })
+
+
 
 
 
@@ -48,7 +53,8 @@ export const taskSlice = createSlice({
             state.isLoading=false;
             state.isError=true;
             state.message=action.payload.message
-        })      
+        })
+        
     }
 
 })

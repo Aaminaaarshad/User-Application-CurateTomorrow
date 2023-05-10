@@ -37,6 +37,7 @@ const CreateForm = () => {
     console.log(data);
 
     const submit =async (e)=>{
+       
         e.preventDefault()
         const formData = new FormData()
         formData.append('eventName', data.eventName)
@@ -62,24 +63,22 @@ const CreateForm = () => {
   
           }
         }
+        
         const {eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage} = data
         if(eventName==='' || eventDate==='' || eventCountry===''|| eventLocation==='' || eventSlogan===''|| companyLogo===''|| eventLogo==='' || eventSpeakers==='' || eventWorkshops===''|| eventAttendees===''|| eventAbout===''|| eventMotive===''|| eventPurpose==='' || eventDesc===''|| partnersImage===''){
           toast.info('Please fill all fields')
+        console.log('helo');
+
         }
         else{
           try{
             const userData = {eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage}
-            console.log(userData)
-            dispatch(createForm(userData))
-          }
+           dispatch(createForm(userData))
+        }
           catch(err){
             toast.error(err.message)
           }
-  
         }
-  
-  
-     
       }
 
 
@@ -116,7 +115,7 @@ return (
                             <input type="text" id='eventSlogan' name='eventSlogan' value={data.eventSlogan} placeholder="Enter slogan of the event" required onChange={onChange}/>
                         </div>
 
-                        {/* <div class="input-field">
+                        <div class="input-field">
                             <label>Company Logo</label>
                             <input type="file" id="companyLogo" accept="companyLogo/*" name="companyLogo" onChange={(e)=>setdata({...data,["companyLogo"]:e.target.files[0]})}/>
                         </div>
@@ -124,7 +123,7 @@ return (
                         <div class="input-field">
                             <label>Event Logo</label>
                             <input type="file" id="eventLogo" accept="eventLogo/*" name="eventLogo" onChange={(e)=>setdata({...data,["eventLogo"]:e.target.files[0]})}/>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
 
@@ -180,10 +179,10 @@ return (
                             <input type="file" id="vedio" accept="vedio/*" name="vedio" />
                         </div> */}
 
-                        {/* <div class="input-field">
+                        <div class="input-field">
                             <label>Event Partners</label>
                             <input type="file" multiple="multiple" id="partnersImage" accept="partnersImage/*" name="partnersImage" onChange={(e)=>setdata({...data,["partnersImage"]:e.target.files[0]})}/>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
 

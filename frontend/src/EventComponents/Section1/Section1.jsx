@@ -9,7 +9,6 @@ import img2 from '../../assets/EventCreater/Capture2.PNG'
 const Section1 = () => {
   const navigate = useNavigate()
   const { user }=useSelector((store)=>store.auth)
-  // 
 
   return (
     <div className='sec1'>

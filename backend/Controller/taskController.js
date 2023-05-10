@@ -12,7 +12,7 @@ const createForm = asyncHandler(async(req,res)=>{
         res.status(400)
         throw new Error("please provide user information")
     }
-    const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSlogan,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc})
+    const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage})
     console.log(newTask,'newTask')
     if(newTask){
         res.status(200).json(newTask)

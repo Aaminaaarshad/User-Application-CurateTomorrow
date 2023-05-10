@@ -20,14 +20,14 @@ const taskSchema = mongoose.Schema({
         type:String,
         required:[true,"Please Provide Task Name"]
     },
-    // companyLogo:{
-    //     type:String,
-    //     required:[true,"Please Provide Task Name"]
-    // },
-    // eventLogo:{
-    //     type:String,
-    //     required:[true,"Please Provide Task Name"]
-    // },
+    companyLogo:{
+        type:String,
+        required:[true,"Please Provide Task Name"]
+    },
+    eventLogo:{
+        type:String,
+        required:[true,"Please Provide Task Name"]
+    },
     eventSpeakers:{
         type:String,
         required:[true,"Please Provide Task Name"]
@@ -56,10 +56,10 @@ const taskSchema = mongoose.Schema({
         type:String,
         required:[true,"Please Provide Task Name"]
     },
-    // partnersImage:{
-    //     type:String,
-    //     required:[true,"Please Provide Task Name"]
-    // },
+    partnersImage:{
+        type:String,
+        required:[true,"Please Provide Task Name"]
+    },
 },{timestamps:true})
 
 
