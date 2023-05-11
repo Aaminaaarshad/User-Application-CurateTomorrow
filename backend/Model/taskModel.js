@@ -21,11 +21,11 @@ const taskSchema = mongoose.Schema({
         required:[true,"Please Provide Task Name"]
     },
     companyLogo:{
-        type:String,
+        type:Array,
         required:[true,"Please Provide Task Name"]
     },
     eventLogo:{
-        type:String,
+        type:Array,
         required:[true,"Please Provide Task Name"]
     },
     eventSpeakers:{
@@ -57,7 +57,7 @@ const taskSchema = mongoose.Schema({
         required:[true,"Please Provide Task Name"]
     },
     partnersImage:{
-        type:String,
+        type:Array,
         required:[true,"Please Provide Task Name"]
     },
 },{timestamps:true})

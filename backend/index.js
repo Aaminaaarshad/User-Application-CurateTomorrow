@@ -39,6 +39,9 @@ app.set('view engine','ejs')
 // [{ name: 'companyLogo', maxCount: 1 }, { name: 'eventLogo', maxCount: 1 }, { name: 'partnersImage', maxCount: 8 }]
 app.post('/createForm',upload.fields([{name:'companyLogo'},{name:'eventLogo'},{name:'partnersImage'}]),asyncHandler(async(req,res)=>{
     console.log(req.files,'files');
+    console.log(req.files.companyLogo,'companyLogo files');
+
+
 
     //   const {companyLogo,eventLogo,partnersImage} = req.file
 
@@ -54,7 +57,7 @@ app.post('/createForm',upload.fields([{name:'companyLogo'},{name:'eventLogo'},{n
     try {
         const fileName = req.files. partnersImage;
         console.log(fileName,'filename');
-        const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSpeakers:`${fileName}`,eventSlogan,companyLogo:`http://localhost:5000/Images${fileName}`,eventLogo:`http://localhost:5000/Images${fileName}`,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage:`http://localhost:5000/Images${fileName}`})
+        const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSpeakers:`${fileName}`,eventSlogan,companyLogo:req.files.companyLogo,eventLogo:req.files.eventLogo,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage:req.files.partnersImage})
         console.log(newTask,'newTask')
         if(newTask){
             res.status(200).json(newTask)
