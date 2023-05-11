@@ -7,52 +7,73 @@ const applicationRoutes = require('./Routes/taskRoutes')
 const userRoutes = require('./Routes/userRoutes')
 const {errorMiddleware} = require('./Middleware/errorMiddleware')
 const ImgModel = require('./Model/imageModel')
+const UserInfo = require('./Model/taskModel')
+const asyncHandler = require('express-async-handler')
 
 
 const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+app.use(cors())
+
+
+
 const path = require('path')
 const multer = require('multer')
 const { log } = require('console')
 
 app.use('/Images', express.static(path.join(__dirname, 'Images')));
 
-const storage = multer.diskStorage({
+var storage = multer.diskStorage({
     destination:(req,file,cb)=>{
         cb(null,'Images')
     },
     filename:(req,file,cb)=>{
-        console.log(file);
-        cb(null,file.originalname)
+        console.log(file,'file');
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 
 const upload=multer({storage:storage})
 app.set('view engine','ejs')
+// [{ name: 'companyLogo', maxCount: 1 }, { name: 'eventLogo', maxCount: 1 }, { name: 'partnersImage', maxCount: 8 }]
+app.post('/createForm',upload.fields([{name:'companyLogo'},{name:'eventLogo'},{name:'partnersImage'}]),asyncHandler(async(req,res)=>{
+    console.log(req.files,'files');
 
-app.post('/api/task/createImage',upload.single('image'),async(req,res)=>{
-    console.log(req.body,'bodyyyyyyyyyyy');
+    //   const {companyLogo,eventLogo,partnersImage} = req.file
+
+    const {eventName,eventDate,eventCountry,eventLocation,eventSlogan,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc} = req.body
+   
+
+    // console.log(req.body,'body');
+    // if(!req.body){
+    //     res.status(400)
+    //     throw new Error("please provide user information")
+    // }
    
     try {
-        const fileName = req.file.originalname;
-        console.log(fileName);
-        const {name,description} = req.body
-        const newImage = await ImgModel.create({name,description,image:`http://localhost:5000/Images/${fileName}`})
-        console.log(newImage);
-    res.send(newImage)
+        const fileName = req.files. partnersImage;
+        console.log(fileName,'filename');
+        const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSpeakers:`${fileName}`,eventSlogan,companyLogo:`http://localhost:5000/Images${fileName}`,eventLogo:`http://localhost:5000/Images${fileName}`,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage:`http://localhost:5000/Images${fileName}`})
+        console.log(newTask,'newTask')
+        if(newTask){
+            res.status(200).json(newTask)
+        }else{
+            res.status(400)
+            throw new Error("task not created")
+        }
     } catch (error) {
         console.log(error);
     }
     
 
-})
+}))
 
 
 
-app.use(express.json())
-app.use(express.urlencoded({extended:true}))
-app.use(cors())
 
-app.use('/api/application',applicationRoutes)
+
+// app.use('/api/application',applicationRoutes)
 app.use('/api/user',userRoutes)
 
 

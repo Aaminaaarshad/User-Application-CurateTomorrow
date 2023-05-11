@@ -54,26 +54,20 @@ const CreateForm = () => {
         formData.append('eventMotive', data.eventMotive)
         formData.append('eventPurpose', data.eventPurpose)
         formData.append('eventDesc', data.eventDesc)
-        formData.append('paymentId', data.paymentId)
         formData.append('partnersImage', data.partnersImage)
   
-        const config = {
-          header:{
-            'content-type': 'multipart/form-data'
-  
-          }
-        }
+        
         
         const {eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage} = data
         if(eventName==='' || eventDate==='' || eventCountry===''|| eventLocation==='' || eventSlogan===''|| companyLogo===''|| eventLogo==='' || eventSpeakers==='' || eventWorkshops===''|| eventAttendees===''|| eventAbout===''|| eventMotive===''|| eventPurpose==='' || eventDesc===''|| partnersImage===''){
           toast.info('Please fill all fields')
-        console.log('helo');
+       
 
         }
         else{
           try{
-            const userData = {eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage}
-           dispatch(createForm(userData))
+           dispatch(createForm(formData))
+           console.log(formData);
         }
           catch(err){
             toast.error(err.message)
@@ -86,7 +80,7 @@ return (
     <div className='body'>
     <div class="formcontainer">
         <header>Please Provide Event Details</header>
-        <form>
+        <form enctype="multipart/form-data">
             <div class="formm first">
                 <div class="details">
                     <div class="fields">
@@ -117,12 +111,12 @@ return (
 
                         <div class="input-field">
                             <label>Company Logo</label>
-                            <input type="file" id="companyLogo" accept="companyLogo/*" name="companyLogo" onChange={(e)=>setdata({...data,["companyLogo"]:e.target.files[0]})}/>
+                            <input type="file" id="companyLogo" accept="image/*" name="companyLogo" onChange={(e)=>setdata({...data,["companyLogo"]:e.target.files[0]})}/>
                         </div>
 
                         <div class="input-field">
                             <label>Event Logo</label>
-                            <input type="file" id="eventLogo" accept="eventLogo/*" name="eventLogo" onChange={(e)=>setdata({...data,["eventLogo"]:e.target.files[0]})}/>
+                            <input type="file" id="eventLogo" accept="image/*" name="eventLogo" onChange={(e)=>setdata({...data,["eventLogo"]:e.target.files[0]})}/>
                         </div>
                     </div>
                 </div>

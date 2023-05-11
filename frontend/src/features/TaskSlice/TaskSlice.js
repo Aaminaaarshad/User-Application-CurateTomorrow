@@ -14,8 +14,15 @@ const initialState = {
 export const createForm =createAsyncThunk('taskSlice/createForm',async(formData, thunkAPI)=>{
     console.log('helo');
     console.log(formData)
+
+    const config = {
+        header:{
+          'content-type': 'multipart/form-data'
+        }
+      }
+      
     try {
-        const response = await axios.post("http://localhost:5000/api/application/createForm",formData)
+        const response = await axios.post("http://localhost:5000/createForm",formData,config)
         return response.data
     
        
