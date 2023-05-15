@@ -1,48 +1,17 @@
 const asyncHandler = require('express-async-handler')
 const UserInfo = require('../Model/taskModel')
 const User = require('../Model/userModel')
-const express = require('express')
-
-const app = express()
-const path = require('path')
-const multer = require('multer')
-const { log } = require('console')
-
-app.use('/Images', express.static(path.join(__dirname, 'Images')));
-
-const storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,'Images')
-    },
-    filename:(req,file,cb)=>{
-        // console.log(file.originalname);
-        cb(null,file.originalname)
-    }
-})
-
-const upload=multer({storage:storage})
-app.set('view engine','ejs')
 
 
-
-// ==============create Form=========
+////////////Post Form//////Create Form///////////////
 const createForm = asyncHandler(async(req,res)=>{
-    console.log(req,'req');
-    console.log(req.file,'file');
     console.log(req.files,'files');
-
-    const {eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo,eventLogo,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage} = req.body
-    console.log(companyLogo)
-
-    console.log(req.body,'body');
-    if(!req.body){
-        res.status(400)
-        throw new Error("please provide user information")
-    }
+    console.log(req.files.companyLogo,'companyLogo files');
+    const {eventName,eventDate,eventCountry,eventLocation,eventSlogan,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc} = req.body
     try {
-        const fileName = req.file;
-        // console.log(fileName);
-        const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSlogan,companyLogo:`http://localhost:5000/Images/${fileName}`,eventLogo:`http://localhost:5000/Images/${fileName}`,eventSpeakers,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage:`http://localhost:5000/Images/${fileName}`})
+        const fileName = req.files. partnersImage;
+        console.log(fileName,'filename');
+        const newTask = await UserInfo.create({eventName,eventDate,eventCountry,eventLocation,eventSpeakers:`${fileName}`,eventSlogan,companyLogo:req.files.companyLogo,eventLogo:req.files.eventLogo,eventWorkshops,eventAttendees,eventAbout,eventMotive,eventPurpose,eventDesc,partnersImage:req.files.partnersImage})
         console.log(newTask,'newTask')
         if(newTask){
             res.status(200).json(newTask)
@@ -53,8 +22,7 @@ const createForm = asyncHandler(async(req,res)=>{
     } catch (error) {
         console.log(error);
     }
-
 })
 
 
-module.exports = { createForm , upload}
+module.exports = { createForm }

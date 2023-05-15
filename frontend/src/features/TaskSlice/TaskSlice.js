@@ -22,7 +22,7 @@ export const createForm =createAsyncThunk('taskSlice/createForm',async(formData,
       }
       
     try {
-        const response = await axios.post("http://localhost:5000/createForm",formData,config)
+        const response = await axios.post("http://localhost:5000/api/application/createForm",formData,config)
         return response.data
     
        

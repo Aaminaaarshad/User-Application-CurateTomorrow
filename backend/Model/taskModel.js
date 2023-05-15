@@ -22,7 +22,6 @@ const taskSchema = mongoose.Schema({
     },
     companyLogo:{
         type:Array,
-        required:[true,"Please Provide Task Name"]
     },
     eventLogo:{
         type:Array,

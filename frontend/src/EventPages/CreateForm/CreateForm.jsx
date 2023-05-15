@@ -175,7 +175,7 @@ return (
 
                         <div class="input-field">
                             <label>Event Partners</label>
-                            <input type="file" multiple="multiple" id="partnersImage" accept="partnersImage/*" name="partnersImage" onChange={(e)=>setdata({...data,["partnersImage"]:e.target.files[0]})}/>
+                            <input type="file" multiple="multiple" id="partnersImage" accept="image/*" name="partnersImage" onChange={(e)=>setdata({...data,["partnersImage"]:e.target.files})}/>
                         </div>
                     </div>
                 </div>

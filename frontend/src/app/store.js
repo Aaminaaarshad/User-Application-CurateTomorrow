@@ -5,6 +5,6 @@ import taskSliceReducer from '../features/TaskSlice/TaskSlice';
 export const store = configureStore({
   reducer: {
     auth: authSliceReducer,
-    tasks: taskSliceReducer,
+    userData: taskSliceReducer,
   },
 });
